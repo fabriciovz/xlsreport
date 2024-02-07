@@ -1,7 +1,7 @@
-# Sql driver mock for Golang
+# XLSReport for Golang
 
-**xlsreport** is a library which implements (https://github.com/qax-os/excelize). The main porpouse is to hide the excelize details when you have to do a simple xls report.
-Instead of having to code every time you need to create an xls report, dealing with column numbers and so on, here you just pass the data and the header configuration.
+**xlsreport** is a library which implements (https://github.com/qax-os/excelize). The main purpose is to hide the "excelize" details when you have to do a simple xls report.
+Instead of coding every time you need to create an xls report, dealing with column numbers and so on, here you just pass the data and the header configuration.
 
 - this library is still construction :).
 - does not require any modifications to your source code.
