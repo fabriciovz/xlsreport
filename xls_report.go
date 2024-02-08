@@ -88,19 +88,3 @@ func (x *xlsReport) getValues(diffsFounded *interface{}) []interface{} {
 	}
 	return values
 }
-
-
-/*
-func NewXLSReport(report []interface{},
-	headersConfig map[string]Header) XLSReport {
-
-	return &xlsReport{
-		report:        report,
-		headersConfig: headersConfig,
-		startCol:      StartColDefault,
-		startDataRow:  StartDataRowDefault,
-		headerRow:     HeaderRowDefault,
-	}
-}*/
-
-
