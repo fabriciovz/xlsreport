@@ -16,20 +16,28 @@ type xlsReport struct {
 	startDataRow  int
 	headerRow     int
 }
-
 type XLSReport interface {
 	GenerateXLSReport() ([]byte, error)
 }
 
-func NewXLSReport(report []interface{},
+func NewXLSReport[T any](report []*T,
 	headersConfig map[string]Header) XLSReport {
+	data := toSliceOfAny(report)
 	return &xlsReport{
-		report:        report,
+		report:        data,
 		headersConfig: headersConfig,
 		startCol:      StartColDefault,
 		startDataRow:  StartDataRowDefault,
 		headerRow:     HeaderRowDefault,
 	}
+}
+
+func toSliceOfAny[T any](s []*T) []any {
+	result := make([]any, len(s))
+	for i, v := range s {
+		result[i] = *v
+	}
+	return result
 }
 
 func (x *xlsReport) GenerateXLSReport() ([]byte, error) {
